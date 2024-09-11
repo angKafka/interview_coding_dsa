@@ -1,4 +1,4 @@
-package array;
+package euclidean_algorithm;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package array;
+package euclidean_algorithm;
+
+import euclidean_algorithm.stack.ReplaceNonCoPrimeStack;
 
 import java.util.List;
 
