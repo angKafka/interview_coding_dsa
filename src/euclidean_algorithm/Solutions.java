@@ -1,18 +1,11 @@
 package euclidean_algorithm;
 
-import euclidean_algorithm.stack.ReplaceNonCoPrimeStack;
-
-import java.util.List;
+import euclidean_algorithm.array.GoodArray;
 
 public class Solutions {
     public static void main(String[] args) {
-        int[] nums = {6,4,3,2,7,6,2};
+        int[] nums = {6,10,15};
 
-        List<Integer> result = ReplaceNonCoPrimeStack.replaceNonCoprimes(nums);
-
-        // Print the resulting list
-        for (int num : result) {
-            System.out.print(num + " ");
-        }
+        System.out.println(GoodArray.isGoodArray(nums));
     }
 }
