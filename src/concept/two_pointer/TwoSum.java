@@ -15,4 +15,31 @@ public class TwoSum {
 
         return result;
     }
+
+
+    public static int[] enhancedTwoSum(int[] nums, int target) {
+
+        if (nums == null || nums.length < 2) {
+            return nums;
+        }
+        int[] result = new int[2];
+        //O(N)
+        int left = 0, right = 1;
+        while (left < nums.length-1) {
+            if (right >= nums.length) {
+                left++;
+                right = left + 1;
+            } else {
+                    int sum = nums[left] + nums[right];
+                    if (sum == target) {
+                        result[0] = left;
+                        result[1] = right;
+                        return result;
+                    }
+                right++;
+                }
+            }
+
+        return result;
+    }
 }
