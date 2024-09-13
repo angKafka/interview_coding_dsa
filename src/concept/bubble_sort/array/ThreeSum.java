@@ -1,0 +1,44 @@
+package concept.bubble_sort.array;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ThreeSum {
+    public List<List<Integer>> threeSum(int[] nums) {
+        bubbleSort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            for (int j = i+1; j < nums.length - 1; j++) {
+                if (j > i+1 && nums[j] == nums[j - 1]) continue;
+
+                for (int k = j+1; k < nums.length; k++) {
+                    if (k > j+1 && nums[k] == nums[k - 1]) continue;
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                            res.add(List.of(nums[i], nums[j], nums[k]));
+                    }
+                }
+            }
+        }
+        return res;
+    }
+
+    public void bubbleSort(int[] nums){
+        for(int i=0; i<nums.length-1; i++){
+            for(int j=0; j<nums.length - i - 1; j++){
+                for(int k=0; k<nums.length - j - 1; k++){
+                    if(nums[k] > nums[k+1]){
+                        swapOfNums(nums, k, k+1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void swapOfNums(int[] nums, int a, int b){
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
+    }
+}
