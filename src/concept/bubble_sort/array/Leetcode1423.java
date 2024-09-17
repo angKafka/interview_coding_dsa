@@ -36,6 +36,7 @@ Constraints:
 1 <= k <= cardPoints.length
 *
 *[1,2,3,4,5,6,1] for this
+*
 * leftSum              rightSum                Sum
 * ==================================================
 * 6                       0                     6
@@ -43,7 +44,7 @@ Constraints:
 * 1                       7                     8
 * 0                       12                    12
 *
-* result = 12
+*
 * */
 public class Leetcode1423 {
     public int maxScore(int[] cardPoints, int k) {
@@ -51,14 +52,14 @@ public class Leetcode1423 {
         for(int points = 0; points <= k-1; points++) {
             leftSum += cardPoints[points];
         }
-            maxSum = leftSum;
-            int rightIndex = cardPoints.length - 1;
-            for(int i = k-1; i >= 0; i--) {
-                leftSum -= cardPoints[i];
-                rightSum += cardPoints[rightIndex];
-                rightIndex--;
-                maxSum = Math.max(maxSum, leftSum+rightSum);
-            }
+        maxSum = leftSum;
+        int rightIndex = cardPoints.length - 1;
+        for(int i = k-1; i >= 0; i--) {
+            leftSum -= cardPoints[i];
+            rightSum += cardPoints[rightIndex];
+            rightIndex--;
+            maxSum = Math.max(maxSum, leftSum+rightSum);
+        }
         return maxSum;
     }
 }
